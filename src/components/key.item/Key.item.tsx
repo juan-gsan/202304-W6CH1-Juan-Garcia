@@ -21,7 +21,7 @@ export function KeyItem({ item }: PropsType) {
   return (
     <>
       <li>
-        {item !== "delete" ? (
+        {item !== "Delete" ? (
           <button className="key" onClick={handleClick}>
             {item}
           </button>

@@ -12,17 +12,18 @@ export function usePhone() {
 
   const [phoneState, dispatch] = useReducer(phoneReducer, initialState);
 
-  // const handleCall = () => {};
-
-  const handleAddNumber = (item) => {
+  const handleAddNumber = (item: any) => {
+    console.log(item);
     dispatch(ac.updateDisplay(item));
   };
 
-  // const handleDeleteNumber = (item) => {};
+  const handleDeleteNumber = (item: any) => {
+    dispatch(ac.deleteDisplay(item));
+  };
 
   return {
-    phone: phoneState.phone,
-    // handleDeleteNumber,
+    phone: phoneState.phone.phoneNumber,
+    handleDeleteNumber,
     handleAddNumber,
   };
 }
