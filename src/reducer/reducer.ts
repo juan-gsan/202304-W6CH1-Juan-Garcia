@@ -11,11 +11,27 @@ export const phoneReducer = (state: PhoneState, action: PhoneAction) => {
   switch (action.type) {
     case actionTypes.updateCalling:
       payload = action.payload as PhoneStructure;
-      return { ...state, phone: !state.phone.isCalling };
+      return {
+        ...state,
+        phone: { ...state.phone, isCalling: !state.phone.isCalling },
+      };
 
     case actionTypes.updateDisplay:
       payload = action.payload as PhoneStructure;
-      return { ...state, phone: payload.phoneNumber };
+      return {
+        ...state,
+        phone: { ...state.phone, phoneNumber: payload.phoneNumber },
+      };
+
+    case actionTypes.deleteDisplay:
+      payload = action.payload as PhoneStructure;
+      return {
+        ...state,
+        phone: {
+          ...state.phone,
+          phoneNumber: state.phone.phoneNumber.slice(0, -1),
+        },
+      };
 
     default:
       return { ...state };

@@ -1,6 +1,4 @@
-import { useContext } from "react";
 import { KeyItem } from "../key.item/Key.item";
-import { Context } from "../../context/context";
 
 export function Keyboard() {
   const keyContainer = [

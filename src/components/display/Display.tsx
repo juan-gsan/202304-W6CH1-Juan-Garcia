@@ -3,12 +3,12 @@ import { Context } from "../../context/context";
 
 export function Display() {
   const {
-    phoneContext: { handleAddNumber },
+    phoneContext: { phone },
   } = useContext(Context);
 
   return (
     <>
-      <span className="number">{handleAddNumber}</span>
+      <span className="number">{phone}</span>
     </>
   );
 }
